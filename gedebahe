@@ -1,0 +1,54 @@
+import java.util.Scanner;
+
+public class 哥德巴赫猜想 {
+
+	private static boolean ture;
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+         Scanner in = new Scanner(System.in);
+              System.out.print("请输入一个大于6的偶数：");
+         
+         int n = in.nextInt();
+         
+         if( n<6 && n%2 == 0) {
+        	  System.out.println("请重新输入一个大于6的偶数");}
+                                                            //输入小于6或者不是偶数就重新输入
+           else {int i = 0,j;
+        	     int x = (n/2-i);
+        	     int y = n-x;
+        	     
+        	    for(y = 1;y<x;y++)
+        	    	
+			{for(i = 2;i<=y;i++)
+				
+			  if(y % i==0) break;
+        	  if(i == y)             //y/i没有可以取整数，i加到最大值的话就是素数
+        	  {  x = n-y;            // n=x+y
+
+              for(j = 2;j <= x;j++) //判断z是否为素数
+            	  
+                 if(x % j == 0) break;
+
+              if(j == x)  //z是素数
+        	       
+        	    System.out.println(n+"="+y+"+"+x); 
+        	        }
+        	   }
+        	}
+		
+	}
+}
+                                                            
+          
+
+
+            
+          
+
+        
+	
+	
+	
+
+
